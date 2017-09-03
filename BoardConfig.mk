@@ -204,5 +204,6 @@ ifneq ($(QCPATH),)
 -include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
 endif
 
+DEVICE_MANIFEST_FILE := device/oneplus/bacon/manifest.xml
 
 -include vendor/zuk/ham/BoardConfigVendor.mk
