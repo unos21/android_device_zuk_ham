@@ -32,9 +32,9 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 # Boot Control
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl
-		
+#PRODUCT_PACKAGES += \
+#    android.hardware.boot@1.0-impl
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh \
