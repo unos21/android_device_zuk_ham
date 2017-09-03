@@ -61,6 +61,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml
 
 PRODUCT_PACKAGES += \
+		android.hardware.audio@2.0-impl \
+		android.hardware.audio.effect@2.0-impl \
     audiod \
     audio.a2dp.default \
     audio_amplifier.msm8974 \
@@ -126,6 +128,15 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
+# GNSS hal
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
+# gralloc
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+		android.hardware.graphics.mapper@2.0-impl
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8974
@@ -137,9 +148,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 #    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
 
+# HW composer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl
+
 # Lights
 PRODUCT_PACKAGES += \
+		android.hardware.light@2.0-impl \
     lights.msm8974
+
+# Keymaster hal
+PRODUCT_PACKAGES += \
+		android.hardware.keymaster@3.0-impl
 
 # IPC Security config
 PRODUCT_COPY_FILES += \
@@ -188,6 +208,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     keystore.msm8974
 
+# sENSORS
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
+# RenderScript hal
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine-8974.conf
@@ -210,6 +242,8 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
     wpa_supplicant \
+		wificond \
+		wifilogd \
     wpa_supplicant.conf \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf \
@@ -231,7 +265,15 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2
 
+# WiFi hal
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service
+
 # ANT+
+
+# OMX properties
+PRODUCT_PROPERTY_OVERRIDES += \
+		persist.media.treble_omx=false
 
 # Enable Bluetooth HFP
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -286,6 +328,7 @@ PRODUCT_COPY_FILES += \
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_PROPERTY_OVERRIDES += debug.hwui.use_buffer_age=false
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
