@@ -15,7 +15,7 @@ persist.radio.multisim.config=dsds
 qcom.bluetooth.soc=smd
 
 # sdcardFS
-ro.sys.sdcardfs=true
+ro.sys.sdcardfs=false
 
 # sensors
 ro.qc.sdk.camera.facialproc=true
