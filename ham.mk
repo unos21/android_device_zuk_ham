@@ -21,6 +21,12 @@ endif
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay vendor/extra/overlays/phone-1080p
 
+# Optional Aosp packages
+PRODUCT_PACKAGES += \
+    Launcher3 \
+    messaging \
+    Terminal
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
