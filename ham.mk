@@ -94,6 +94,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
      audio.offload.pcm.16bit.enable=true \
      audio.offload.pcm.24bit.enable=true
 
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+		android.hardware.bluetooth@1.0-impl \
+		libbt-vendor
+
 # First api level, device has been commercially launched
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=22
